@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Secure-Links",
+  "version": "1.0.0",
+  "description": "Enhance web browsing security through Marking Attack-Free Links in any websites.",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "16": "16x16.png",
+    "48": "3.png",
+    "128": "128.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "16x16_2.png",
+      "48": "3.png",
+      "128": "128x128_2.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
